@@ -1,0 +1,20 @@
+@font-face {
+  font-display: swap;
+  font-family: "Salsa";
+  src: local("Salsa"), url("../assets/fonts/Salsa-Regular.woff2") format("woff2"), url("../assets/fonts/Salsa-Regular.woff")  format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Philosopher";
+  src: local("Philosopher"), url("../assets/fonts/Philosopher-Bold.woff2") format("woff2"), url("../assets/fonts/Philosopher-Bold.woff")  format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Philosopher";
+  src: local("Philosopher"), url("../assets/fonts/Philosopher-Regular.woff2") format("woff2"), url("../assets/fonts/Philosopher-Regular.woff")  format("woff");
+  font-weight: 400;
+}

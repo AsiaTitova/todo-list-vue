@@ -1,0 +1,60 @@
+.add-form form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.add-form__input {
+  width: 250px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $border-gray;
+}
+
+.add-form__submit {
+  width: 120px;
+  margin-left: 24px;
+  padding: 6px 25px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+}
+
+.add-form__label--quickly {
+  position: relative;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  color: $black;
+  padding-right: 28px;
+  position: relative;
+  margin-left: auto;
+
+  &::before {
+    @include pseudo ("", absolute, 16px, 16px);
+    top: 2px;
+    right: 0;
+    border-radius: 50%;
+    border: 1.5px solid $blue;
+  }
+}
+
+.add-form__checkbox:checked + .add-form__label--quickly {
+  &::before {
+    background-color: $blue;
+    background-image: url("../assets/img/check.svg");
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-size: 10px 10px;
+    animation-name: checkbox-hover;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+  }
+}

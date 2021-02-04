@@ -1,0 +1,63 @@
+.checkbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkbox__label {
+  position: relative;
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 20px;
+  color: $black;
+
+  &::before {
+    @include pseudo ("", absolute, 18px, 18px);
+    top: 2px;
+    left: 0;
+    border-radius: 50%;
+    border: 1.5px solid $blue;
+  }
+}
+
+.checkbox__input:checked + .checkbox__label {
+  text-decoration: line-through;
+
+  &::before {    
+    background-color: $blue;
+    background-image: url("../assets/img/check.svg");
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    background-size: 10px 10px;
+    animation-name: checkbox-hover;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.checkbox__link {  
+  text-decoration: none;
+}
+
+.checkbox__delete {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox__delete svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 0.7;
+    animation-name: delete-hover;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+  }
+}

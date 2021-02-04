@@ -1,0 +1,5 @@
+.app {
+  @include wrap (1024px, 0 auto);
+  padding: 97px 12px;
+  display: flex;
+}
