@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "fake-json": "json-server ./src/assets/DataBase.json --watch --port 3001"
   },
   "dependencies": {
     "axios": "^0.21.x",
@@ -13,7 +14,8 @@
     "core-js": "^3.8.3",
     "vue": "^2.6.12",
     "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
+    "vuex": "^3.6.2",
+    "json-server": "^0.16.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.11",
@@ -27,6 +29,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^7.5.0",
+    "autoprefixer": "^7.1.2",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1",
     "vue-template-compiler": "^2.6.12"

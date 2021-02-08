@@ -1,0 +1,104 @@
+{
+  "tasks": [
+    {
+      "id": "task1",
+      "text": "Изучить Vue.js",
+      "completed": false
+    },
+    {
+      "id": "task2",
+      "text": "Купить продукты",
+      "completed": false
+    },
+    {
+      "id": "task3",
+      "text": "Посмотреть фильмы",
+      "completed": false
+    },
+    {
+      "id": "task4",
+      "text": "Выгулять собаку",
+      "completed": false
+    },
+    {
+      "body": "123",
+      "id": "ZxMPS1J"
+    },
+    {
+      "text": "дордмф",
+      "id": "lfGWobv"
+    }
+  ],
+  "subtasks": [
+    {
+      "id": "subtask6",
+      "listId": "task2",
+      "text": "Хлеб",
+      "completed": false,
+      "quickly": false
+    },
+    {
+      "id": "subtask7",
+      "listId": "task2",
+      "text": "Сыр",
+      "completed": true,
+      "quickly": false
+    },
+    {
+      "id": "subtask8",
+      "listId": "task2",
+      "text": "Яблоки",
+      "completed": false,
+      "quickly": false
+    },
+    {
+      "id": "subtask9",
+      "listId": "task2",
+      "text": "Сахар",
+      "completed": true,
+      "quickly": false
+    },
+    {
+      "id": "subtask10",
+      "listId": "task2",
+      "text": "Чай",
+      "completed": false,
+      "quickly": false
+    },
+    {
+      "id": "subtask1",
+      "listId": "task1",
+      "text": "Изучить JavaScript",
+      "completed": true,
+      "quickly": false
+    },
+    {
+      "id": "subtask3",
+      "listId": "task1",
+      "text": "VueX",
+      "completed": true,
+      "quickly": true
+    },
+    {
+      "id": "subtask4",
+      "listId": "task1",
+      "text": "Vue-CLI",
+      "completed": false,
+      "quickly": true
+    },
+    {
+      "id": "subtask11",
+      "listId": "task3",
+      "text": "Тайна Коко",
+      "completed": false,
+      "quickly": false
+    },
+    {
+      "id": "subtask12",
+      "listId": "task3",
+      "text": "Теория Большого Взрыва",
+      "completed": true,
+      "quickly": false
+    }
+  ]
+}

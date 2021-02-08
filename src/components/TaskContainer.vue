@@ -2,7 +2,7 @@
   <div class="task__container">
     <h2 class="task__title">Список задач:</h2>
     <ul class="task__list">
-      <TaskItem v-for="(task, index) in tasks"
+      <TaskItem v-for="(task, index) in TASKS"
                 v-bind:key="index"
                 :index="index"
                 :id="task.id"
@@ -11,39 +11,30 @@
                 @onToggleComplated="onToggleComplated"
                 @onRemoveTask="onRemoveTask" />
     </ul>
-    <AddForm @onAddTask="onAddTask"/>
+    <AddForm
+      :quickly="quickly"
+      @onAddTask="onAddTask"/>
   </div>
 </template>
 
 <script>
+  import axios from 'axios';
+  import {mapActions, mapGetters} from 'vuex';
   import TaskItem from "./TaskItem.vue";
   import AddForm from "./AddForm.vue";
 
   export default {
-    name: 'TaskList',
+    name: 'TaskContainer',
     data: () => ({
-    tasks: [
-      {
-        id: "task1",
-        text: "Изучить Vue.js",
-        completed: false,
-      },
-      {
-        id: "task2",
-        text: "Купить продукты",
-        completed: false,
-      },
-      {
-        id: "task3",
-        text: "Прочитать книги",
-        completed: false,
-      }
-    ]
-  }),
+      quickly: false
+    }),
     components: {
       TaskItem, AddForm
     },
     methods: {
+      ...mapActions([
+        'GET_TASKS'
+      ]),
       onToggleComplated(index) {
         this.tasks[index] = !this.tasks[index];
       },
@@ -54,9 +45,20 @@
         })
       },
       onRemoveTask(index) {
+        axios.
+        delete('http://localhost:3001/tasks/ + ', {
+          text: this.text
+        }).then(response => {});
         this.tasks.splice(index, 1);
       }
-
-    }
+    },
+    computed: {
+      ...mapGetters([
+        'TASKS'
+      ])
+    },
+    mounted() {
+      this.GET_TASKS()
+    },
   }
 </script>

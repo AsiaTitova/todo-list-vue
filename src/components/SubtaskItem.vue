@@ -1,12 +1,22 @@
 <template>
-  <li class="task__item"
-    @click="setActiveClass">
-      <h2 class="task__name">{{text}}</h2>
-      <button class="task__delete" type="button" @click="removeTask(index)">
+  <li class="subtask__item" @click="toggleComplated">
+    <form class="subtask__checkbox checkbox">
+      <input class="checkbox__input visually-hidden" type="checkbox" :id="index" :checked="completed">
+      <label class="checkbox__label" :for="index">{{text}}</label>
+      <icon-base
+        class="checkbox__quickly"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        icon-name="quickly"
+        iconColor="red"
+        v-if="quickly"><icon-quickly /></icon-base>
+      <button class="checkbox__delete" type="button" @click="removeTask(index)">
         <icon-base
         viewBox="0 0 40 40"
         icon-name="delete"><icon-delete /></icon-base>
       </button>
+    </form>
   </li>
 </template>
 
@@ -17,9 +27,6 @@
 
   export default {
     name: "TaskItem",
-    data: () => ({
-      isActive: false
-    }),
     props: {
       index: Number,
       id: String,
@@ -33,13 +40,6 @@
       IconQuickly
     },
     methods: {
-      setActiveClass(evt) {
-        let items = document.querySelectorAll(".task__item");
-        items.forEach(function(item) {
-          item.classList.remove("task__item--active");
-          evt.currentTarget.classList.add("task__item--active");
-        });
-      },
       toggleComplated(index) {
         this.$emit("onToggleComplated", index);
       },

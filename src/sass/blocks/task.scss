@@ -1,10 +1,9 @@
 .task__container {
-  width: 100%;
-  padding: 80px 50px;
+  width: 300px;
+  padding: 80px 30px;
   background-color: $white;
   box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.25);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-right: 1px solid $border-gray;
 }
 
 .task__title {
@@ -20,19 +19,56 @@
 
 .task__list {
   @include list-style (none, 0, 0);
+  padding-right: 15px;
+  max-height: 300px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    margin-left: 5px;
+    background-color: $thumb-scroll;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $thumb-scroll-hover;
+  }
 }
 
 .task__item {
   position: relative;
+  margin-bottom: 10px; 
   padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-sizing: border-box;
+  cursor: pointer;
+
+  &::before {
+    @include pseudo ("", absolute, 100%, 1px);
+    bottom: 0;
+    left: 0;
+    background-color: $border-gray;
+    display: none;
+  }
+
+  &--active {
+    &::before {
+      display: block;
+    }
+  }
   
   &:hover {
     &::before {
-      @include pseudo ("", absolute, 100%, 1px);
-      bottom: 0;
-      left: 0;
-      background-color: $border-gray;
+      display: block;
       animation-name: item-hover;
       animation-duration: 600ms;
       animation-timing-function: ease-in-out;
@@ -40,10 +76,52 @@
   }
 }
 
-.task__item:not(:last-child) {
-  margin-bottom: 10px; 
+.task__name {
+  position: relative;
+  font-size: 18px;
+  line-height: 20px;
+  color: $black;
+}
+
+.task__delete {
+  margin-left: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.task__delete svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 0.7;
+    animation-name: delete-hover;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in-out;
+  }
 }
 
 .task__add-form {
   margin-top: 30px;
+}
+
+.task__container .task__add-form form {
+  flex-direction: column;
+}
+
+.task__container .add-form__input{
+  width: 100%;
+}
+
+.task__container .add-form__submit{
+  width: 100%;
+  margin: 10px 0 0;
 }
