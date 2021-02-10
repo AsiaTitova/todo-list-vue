@@ -1,8 +1,8 @@
 <template>
   <div class="subtask__container">
-    <h2 class="subtask__title">Список задач:</h2>
+    <h2 class="subtask__title">Подзадачи:</h2>
     <ul class="subtask__list">
-      <SubtaskItem v-for="(subtask, index) in SUBTASKS"
+      <SubtaskItem v-for="(subtask, index) in subtasks"
                 v-bind:key="index"
                 :index="index"
                 :id="subtask.id"
@@ -12,7 +12,7 @@
                 @onToggleComplated="onToggleComplated"
                 @onRemoveTask="onRemoveTask" />
     </ul>
-    <AddForm
+    <AddSubtaskForm
       :quickly="quickly"
       @onAddTask="addTask(textValue, quicklyValue)"/>
   </div>
@@ -22,7 +22,7 @@
   import axios from 'axios';
   import {mapActions, mapGetters} from 'vuex';
   import SubtaskItem from "./SubtaskItem.vue";
-  import AddForm from "./AddForm.vue";
+  import AddSubtaskForm from "./AddSubtaskForm.vue";
 
   export default {
     name: 'SubtaskContainer',
@@ -30,8 +30,11 @@
       text: '',
       quickly: true
   }),
+  props: {
+      subtasks: Array
+    },
   components: {
-    SubtaskItem, AddForm
+    SubtaskItem, AddSubtaskForm
   },
   methods: {
     ...mapActions([
@@ -39,16 +42,6 @@
     ]),
     onToggleComplated(index) {
       this.tasks[index] = !this.tasks[index];
-    },
-    addTask(textValue, quicklyValue) {
-      axios.
-      post('http://localhost:3001/subtasks', {
-        text: textValue,
-        quickly: quicklyValue
-      }).then(response => {})
-    },
-    onRemoveTask(index) {
-      this.tasks.splice(index, 1);
     }
   },
   computed: {

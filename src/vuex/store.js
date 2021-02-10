@@ -28,6 +28,16 @@ let store = new Vuex.Store({
         console.log(error);
       })
     },
+    DELETE_TASKS({commit}, params) {
+      return axios('http://localhost:3001/tasks' + params, {
+        method: 'DELETE'
+      }).then((tasks) => {
+        commit('DELETE_TASKS', tasks.data);
+        return tasks;
+      }).catch((error) => {
+        console.log(error);
+      })
+    },
     GET_SUBTASKS({commit}) {
       return axios('http://localhost:3001/subtasks', {
         method: 'GET'
