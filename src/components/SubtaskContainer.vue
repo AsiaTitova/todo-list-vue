@@ -2,6 +2,7 @@
   <div class="subtask__container">
     <h2 class="subtask__title">Подзадачи:</h2>
     <ul class="subtask__list">
+      <li class="subtasks__none" v-if="!subtasks">Нет подзадач</li>
       <SubtaskItem v-for="(subtask, index) in subtasks"
                 v-bind:key="index"
                 :index="index"
