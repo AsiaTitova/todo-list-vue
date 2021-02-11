@@ -21,8 +21,7 @@
                   @getCurrentTask="getCurrentTask"/>
       </ul>
       <AddForm
-        :quickly="quickly"
-        @onAddTask="onAddTask"/>
+        :quickly="quickly"/>
     </div>
     <router-view/>
     <SubtaskContainer :subtasks="subtasks"/>
@@ -52,12 +51,6 @@
       TaskItem, AddForm, Loader, IconBase, IconBack, SubtaskContainer
     },
     methods: {
-      onAddTask() {
-        axios.
-        post('http://localhost:3001/tasks', {
-          text: this.text
-        }).then(response => {})
-      },
       getCurrentTask(index) {
         console.log(this.tasks[index].id);
         let currentTask = this.tasks.filter(task => this.tasks[index].id === task.id);

@@ -2,7 +2,7 @@
   <li class="task__item"
     @click="setActiveClass; getCurrentTask(index)">
       <h2 class="task__name">{{text}}</h2>
-      <button class="task__delete" type="button" @click="removeTask">
+      <button class="task__delete" type="button" @click="onRemoveTasks">
         <icon-base
         viewBox="0 0 40 40"
         icon-name="delete"><icon-delete /></icon-base>
@@ -14,7 +14,7 @@
   import IconBase from "./IconBase.vue"
   import IconDelete from "../assets/img/icons/IconDelete.vue"
   import IconQuickly from "../assets/img/icons/IconQuickly";
-  import axios from 'axios';
+  import {mapActions, mapGetters} from 'vuex';
 
   export default {
     name: "TaskItem",
@@ -34,6 +34,9 @@
       IconQuickly
     },
     methods: {
+      ...mapActions([
+        'DELETE_TASKS'
+      ]),
       setActiveClass(evt) {
         let items = document.querySelectorAll(".task__item");
         items.forEach(function(item) {
@@ -44,16 +47,17 @@
       toggleComplated(index) {
         this.$emit("onToggleComplated", index);
       },
-      removeTask() {
-        axios.
-        delete('http://localhost:3001/tasks/' + `${this.id}`, {
-        }).then(response => {
-
-        });
+      onRemoveTasks() {
+        this.$store.dispatch('DELETE_TASKS', this.id);
       },
       getCurrentTask(index) {
         this.$emit("getCurrentTask", index);
       }
+    },
+    computed: {
+      ...mapGetters([
+        'TASKS'
+      ])
     }
   }
 </script>

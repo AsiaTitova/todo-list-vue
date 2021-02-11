@@ -11,7 +11,7 @@
         icon-name="quickly"
         iconColor="red"
         v-if="quickly"><icon-quickly /></icon-base>
-      <button class="checkbox__delete" type="button" @click="removeTask(index)">
+      <button class="checkbox__delete" type="button">
         <icon-base
         viewBox="0 0 40 40"
         icon-name="delete"><icon-delete /></icon-base>
@@ -43,9 +43,9 @@
       toggleComplated(index) {
         this.$emit("onToggleComplated", index);
       },
-      removeTask(index) {
-        this.$emit("onRemoveTask", index);
-      }
+      // removeTask(index) {
+      //   this.$emit("onRemoveTask", index);
+      // }
     }
   }
 </script>

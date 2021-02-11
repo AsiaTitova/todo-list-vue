@@ -1,38 +1,41 @@
 <template>
   <div class="task__add-form add-form">
     <form method="POST">
-      <input class="add-form__input" type="text" id="add-task" v-model="text">
+      <input class="add-form__input add-form__input--tasks" type="text" id="add-task" v-model="text">
       <label class="add-form__label visually-hidden" for="add-task">Добавить задачу</label>
-      <button @click="onAddTask" class="add-form__submit" type="button">Добавить</button>
-      <label v-if="quickly" class="add-form__label add-form__label--quickly" for="quickly">Срочно</label>
-      <input v-if="quickly" class="add-form__checkbox visually-hidden" type="checkbox" id="quickly">
+      <button @click="onAddTasks(); onResetText()" class="add-form__button" type="button">Добавить</button>
+      <button @click="onResetText" class="add-form__button" type="button">Отмена</button>
     </form>
   </div>
 </template>
 
 <script>
-  import axios from 'axios';
+  import {mapActions, mapGetters} from 'vuex';
+
   export default {
     name: 'AddForm',
     data: () => ({
-      text: ""
+      text: ''
     }),
     props: {
       quickly: Boolean,
       newId: Function
     },
     methods: {
-      onAddTask() {
-        axios.
-        post('http://localhost:3001/tasks', {
-          text: this.text
-        }).then(response => {
-          document.querySelector(".add-form__input").value='';
-        })
+      ...mapActions([
+        'ADD_TASKS'
+      ]),
+      onResetText() {
+        document.querySelector('.add-form__input--tasks').value = '';
       },
-      addTask() {
-        this.$emit("onAddTask");
+      onAddTasks() {
+        this.$store.dispatch('ADD_TASKS', { text: this.text });
       }
+    },
+    computed: {
+      ...mapGetters([
+        'TASKS'
+      ])
     }
   }
 </script>

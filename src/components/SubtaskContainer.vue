@@ -9,8 +9,7 @@
                 :text="subtask.text"
                 :completed="subtask.completed"
                 :quickly="subtask.quickly"
-                @onToggleComplated="onToggleComplated"
-                @onRemoveTask="onRemoveTask" />
+                @onToggleComplated="onToggleComplated" />
     </ul>
     <AddSubtaskForm
       :quickly="quickly"

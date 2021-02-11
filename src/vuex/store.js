@@ -15,7 +15,13 @@ let store = new Vuex.Store({
     },
     SET_SUBTASKS: (state, subtasks) => {
       state.subtasks = subtasks;
-    }
+    },
+    ADD_TASKS: (state, tasks) => {
+      state.tasks.push(tasks);
+    },
+    DELETE_TASKS: (state, tasks) => {
+      state.tasks.splice(tasks, 1);
+    },
   },
   actions: {
     GET_TASKS({commit}) {
@@ -28,8 +34,16 @@ let store = new Vuex.Store({
         console.log(error);
       })
     },
+    ADD_TASKS({commit}, context) {
+      return axios.post('http://localhost:3001/tasks', context).then((tasks) => {
+        commit('ADD_TASKS', tasks.data);
+        return tasks;
+      }).catch((error) => {
+        console.log(error);
+      })
+    },
     DELETE_TASKS({commit}, params) {
-      return axios('http://localhost:3001/tasks' + params, {
+      return axios('http://localhost:3001/tasks/' + params, {
         method: 'DELETE'
       }).then((tasks) => {
         commit('DELETE_TASKS', tasks.data);
