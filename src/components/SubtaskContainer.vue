@@ -13,12 +13,11 @@
     </ul>
     <AddSubtaskForm
       :quickly="quickly"
-      @onAddTask="addTask(textValue, quicklyValue)"/>
+      @onAddSubtasks="onAddSubtasks(context)"/>
   </div>
 </template>
 
 <script>
-  import axios from 'axios';
   import {mapActions, mapGetters} from 'vuex';
   import SubtaskItem from "./SubtaskItem.vue";
   import AddSubtaskForm from "./AddSubtaskForm.vue";
@@ -30,6 +29,7 @@
       quickly: true
   }),
   props: {
+      tasks: Array,
       subtasks: Array
     },
   components: {
@@ -37,19 +37,19 @@
   },
   methods: {
     ...mapActions([
-      'GET_SUBTASKS'
+        'ADD_SUBTASKS'
     ]),
     onToggleComplated(index) {
       this.tasks[index] = !this.tasks[index];
+    },
+    onAddSubtasks(index, context) {
+      this.$store.dispatch('ADD_SUBTASKS', this.index , {context});
     }
   },
   computed: {
       ...mapGetters([
         'SUBTASKS'
       ])
-    },
-    mounted() {
-      this.GET_SUBTASKS()
-    },
+    }
 }
 </script>

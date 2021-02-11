@@ -61,7 +61,15 @@ let store = new Vuex.Store({
       }).catch((error) => {
         console.log(error);
       })
-    }
+    },
+    ADD_SUBTASKS({commit}, params, context) {
+      return axios.post('http://localhost:3001/tasks/' + params, context).then((tasks) => {
+        commit('ADD_TASKS', tasks.data);
+        return tasks;
+      }).catch((error) => {
+        console.log(error);
+      })
+    },
   },
   getters: {
     TASKS(state) {

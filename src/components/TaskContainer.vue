@@ -21,7 +21,8 @@
                   @getCurrentTask="getCurrentTask"/>
       </ul>
       <AddForm
-        :quickly="quickly"/>
+        :quickly="quickly"
+        :tasks="tasks"/>
     </div>
     <router-view/>
     <SubtaskContainer :subtasks="subtasks"/>
