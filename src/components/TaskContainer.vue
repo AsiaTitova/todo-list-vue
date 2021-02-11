@@ -11,7 +11,6 @@
             iconColor="#2aaee4"><icon-back /></icon-base>
       </router-link>
       <h2 class="task__title" @click="getCurrentTask">Список задач:</h2>
-      <Loader v-if="loading"/>
       <ul class="task__list">
         <TaskItem v-for="(task, index) in tasks"
                   v-bind:key="index"
@@ -20,17 +19,15 @@
                   :text="task.text"
                   @getCurrentTask="getCurrentTask"/>
       </ul>
-      <AddForm
-        :quickly="quickly"
-        :tasks="tasks"/>
+      <AddForm />
     </div>
     <router-view/>
-    <SubtaskContainer :subtasks="subtasks"/>
+    <SubtaskContainer
+      :subtasks="subtasks" />
   </div>
 </template>
 
 <script>
-  import axios from 'axios';
   import TaskItem from "./TaskItem.vue";
   import AddForm from "./AddForm.vue";
   import Loader from "./Loader.vue";
@@ -41,8 +38,6 @@
   export default {
     name: 'TaskContainer',
     data: () => ({
-      quickly: false,
-      loading: false,
       subtasks: []
     }),
     props: {
@@ -53,6 +48,7 @@
     },
     methods: {
       getCurrentTask(index) {
+        this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} })
         console.log(this.tasks[index].id);
         let currentTask = this.tasks.filter(task => this.tasks[index].id === task.id);
         this.subtasks = currentTask[0].subtasks;

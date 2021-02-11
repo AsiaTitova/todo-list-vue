@@ -4,7 +4,7 @@
       <input class="add-form__input add-form__input--subtasks" type="text" id="add-task" v-model="text">
       <label class="add-form__label visually-hidden" for="add-task">Добавить задачу</label>
       <label class="add-form__label add-form__label--quickly" for="quickly">Срочно</label>
-      <input class="add-form__checkbox visually-hidden" type="checkbox" id="quickly" v-model="checked">
+      <input class="add-form__checkbox" type="checkbox" id="quickly" v-model="checked">
       <button @click="addSubtasks" class="add-form__button" type="button">Добавить</button>
       <button @click="onResetText" class="add-form__button" type="button">Отмена</button>
     </form>
@@ -19,7 +19,6 @@
       checked: false
     }),
     props: {
-      quickly: Boolean,
       newId: Function
     },
     methods: {
@@ -30,7 +29,7 @@
         this.$emit("onAddSubtasks", {subtasks: [
           {
             text: this.text,
-            quicly: this.checked
+            quickly: this.checked
           }
         ]});
       }

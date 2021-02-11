@@ -13,7 +13,6 @@
                 @onToggleComplated="onToggleComplated" />
     </ul>
     <AddSubtaskForm
-      :quickly="quickly"
       @onAddSubtasks="onAddSubtasks(context)"/>
   </div>
 </template>
@@ -26,11 +25,9 @@
   export default {
     name: 'SubtaskContainer',
     data: () => ({
-      text: '',
-      quickly: true
+      text: ''
   }),
   props: {
-      tasks: Array,
       subtasks: Array
     },
   components: {

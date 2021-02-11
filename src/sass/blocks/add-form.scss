@@ -43,24 +43,22 @@
   padding-right: 28px;
   position: relative;
 
-  &::before {
-    @include pseudo ("", absolute, 16px, 16px);
-    top: 2px;
-    right: 0;
-    border-radius: 50%;
-    border: 1.5px solid $blue;
-  }
+  // &::before {
+  //   @include pseudo ("", absolute, 16px, 16px);
+  //   top: 2px;
+  //   right: 0;
+  //   border-radius: 50%;
+  //   border: 1.5px solid $blue;
+  // }
 }
 
-.add-form__checkbox:checked + .add-form__label--quickly {
-  &::before {
-    background-color: $blue;
-    background-image: url("../assets/img/check.svg");
-    background-repeat: no-repeat;
-    background-position: 3px 3px;
-    background-size: 10px 10px;
-    animation-name: checkbox-hover;
-    animation-duration: 400ms;
-    animation-timing-function: ease-in-out;
-  }
-}
+// .add-form__checkbox:checked + .add-form__label::before {
+//   background-color: $blue;
+//   background-image: url("../assets/img/check.svg");
+//   background-repeat: no-repeat;
+//   background-position: 3px 3px;
+//   background-size: 10px 10px;
+//   animation-name: checkbox-hover;
+//   animation-duration: 400ms;
+//   animation-timing-function: ease-in-out;
+// }

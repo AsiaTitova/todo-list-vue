@@ -17,10 +17,6 @@
     data: () => ({
       text: ''
     }),
-    props: {
-      quickly: Boolean,
-      newId: Function
-    },
     methods: {
       ...mapActions([
         'ADD_TASKS'

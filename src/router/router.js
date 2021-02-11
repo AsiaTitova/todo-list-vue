@@ -15,11 +15,12 @@ export default new Router({
       component: Home
     },
     {
-      path: "/todo",
-      component: Todo
+      path: "/todo/:id",
+      component: Todo,
+      name: 'Todo'
     },
     {
-      path: "/todo/:id",
+      path: "/todo",
       component: Todo
     }
   ]
