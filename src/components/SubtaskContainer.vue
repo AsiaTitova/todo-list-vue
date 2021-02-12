@@ -13,12 +13,11 @@
                 @onToggleComplated="onToggleComplated" />
     </ul>
     <AddSubtaskForm
-      @onAddSubtasks="onAddSubtasks(context)"/>
+      :params="params"/>
   </div>
 </template>
 
 <script>
-  import {mapActions, mapGetters} from 'vuex';
   import SubtaskItem from "./SubtaskItem.vue";
   import AddSubtaskForm from "./AddSubtaskForm.vue";
 
@@ -28,26 +27,16 @@
       text: ''
   }),
   props: {
-      subtasks: Array
+      subtasks: Array,
+      params: String
     },
   components: {
     SubtaskItem, AddSubtaskForm
   },
   methods: {
-    ...mapActions([
-        'ADD_SUBTASKS'
-    ]),
     onToggleComplated(index) {
       this.tasks[index] = !this.tasks[index];
-    },
-    onAddSubtasks(index, context) {
-      this.$store.dispatch('ADD_SUBTASKS', this.index , {context});
     }
-  },
-  computed: {
-      ...mapGetters([
-        'SUBTASKS'
-      ])
-    }
+  }
 }
 </script>

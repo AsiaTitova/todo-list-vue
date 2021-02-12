@@ -1,6 +1,6 @@
 <template>
   <li class="task__item"
-    @click="setActiveClass; getCurrentTask(index)">
+    @click="setActiveClass; getCurrentTask(index); getCurrentId(index)">
       <h2 class="task__name">{{text}}</h2>
       <button class="task__delete" type="button" @click="onRemoveTasks">
         <icon-base
@@ -52,6 +52,9 @@
       },
       getCurrentTask(index) {
         this.$emit("getCurrentTask", index);
+      },
+      getCurrentId(index) {
+        this.$emit("getCurrentId", index);
       }
     },
     computed: {

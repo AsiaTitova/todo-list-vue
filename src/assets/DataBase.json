@@ -1,165 +1,179 @@
 {
-  "tasks": [
+  "lists": [
     {
       "id": "1",
-      "text": "Изучить Vue.js",
-      "subtasks": [
-        {
-          "id": "subtask3",
-          "listId": "1",
-          "text": "VueX",
-          "completed": true,
-          "quickly": true
-        },
-        {
-          "id": "subtask4",
-          "listId": "1",
-          "text": "Vue-CLI",
-          "completed": false,
-          "quickly": true
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "text": "Купить продукты",
-      "subtasks": [
-        {
-          "id": "subtask6",
-          "listId": "2",
-          "text": "Хлеб",
-          "completed": false,
-          "quickly": false
-        },
-        {
-          "id": "subtask7",
-          "listId": "2",
-          "text": "Сыр",
-          "completed": true,
-          "quickly": false
-        },
-        {
-          "id": "subtask8",
-          "listId": "2",
-          "text": "Яблоки",
-          "completed": false,
-          "quickly": false
-        },
-        {
-          "id": "subtask9",
-          "listId": "2",
-          "text": "Сахар",
-          "completed": true,
-          "quickly": false
-        },
-        {
-          "id": "subtask10",
-          "listId": "2",
-          "text": "Чай",
-          "completed": false,
-          "quickly": false
-        }
-      ]
+      "text": "Покупки"
     },
     {
       "id": "3",
-      "text": "Посмотреть фильмы",
-      "subtasks": [
-        {
-          "id": "subtask11",
-          "listId": "3",
-          "text": "Тайна Коко",
-          "completed": false,
-          "quickly": false
-        },
-        {
-          "id": "subtask12",
-          "listId": "3",
-          "text": "Теория Большого Взрыва",
-          "completed": true,
-          "quickly": false
-        }
-      ]
+      "text": "Фильмы и сериалы"
     },
     {
-      "id": "4",
-      "text": "Выгулять собаку"
+      "text": "Создать приложение ToDo list",
+      "id": "5"
     },
     {
-      "text": "Создать блоки регистрации и авторизации",
-      "id": "IyA_YGw"
+      "text": "Изучить Vue",
+      "id": "QB2aKhW"
     }
   ],
   "subtasks": [
     {
-      "id": "subtask6",
-      "listId": "2",
+      "id": "6",
+      "listId": "1",
       "text": "Хлеб",
       "completed": false,
       "quickly": false
     },
     {
-      "id": "subtask7",
-      "listId": "2",
+      "id": "7",
+      "listId": "1",
       "text": "Сыр",
       "completed": true,
       "quickly": false
     },
     {
-      "id": "subtask8",
-      "listId": "2",
-      "text": "Яблоки",
-      "completed": false,
-      "quickly": false
-    },
-    {
-      "id": "subtask9",
-      "listId": "2",
-      "text": "Сахар",
-      "completed": true,
-      "quickly": false
-    },
-    {
-      "id": "subtask10",
-      "listId": "2",
-      "text": "Чай",
-      "completed": false,
-      "quickly": false
-    },
-    {
-      "id": "subtask1",
-      "listId": "1",
-      "text": "Изучить JavaScript",
-      "completed": true,
-      "quickly": false
-    },
-    {
-      "id": "subtask3",
-      "listId": "1",
-      "text": "VueX",
-      "completed": true,
-      "quickly": true
-    },
-    {
-      "id": "subtask4",
-      "listId": "1",
-      "text": "Vue-CLI",
-      "completed": false,
-      "quickly": true
-    },
-    {
-      "id": "subtask11",
+      "id": "11",
       "listId": "3",
       "text": "Тайна Коко",
       "completed": false,
       "quickly": false
     },
     {
-      "id": "subtask12",
+      "id": "12",
       "listId": "3",
       "text": "Теория Большого Взрыва",
       "completed": true,
       "quickly": false
+    },
+    {
+      "listId": "1",
+      "text": "Яйца",
+      "completed": false,
+      "id": "18"
+    },
+    {
+      "listId": "5",
+      "text": "Оформить дизайн",
+      "completed": true,
+      "id": "19"
+    },
+    {
+      "listId": "5",
+      "text": "Реализовать сценарий \"Добавление новых списков задач\"",
+      "completed": true,
+      "id": "20"
+    },
+    {
+      "listId": "5",
+      "text": "Реализовать сценарий \"Удаление списков задач\"",
+      "completed": true,
+      "id": "21"
+    },
+    {
+      "listId": "5",
+      "text": "Реализовать сценарий \"Добавление подзадач\"",
+      "completed": true,
+      "id": "22"
+    },
+    {
+      "listId": "5",
+      "text": "Реализовать сценарий \"Удаление подзадач\"",
+      "completed": true,
+      "id": "23"
+    },
+    {
+      "listId": "5",
+      "text": "Реализовать сценарий \"Добавление срочной задачи\"",
+      "completed": true,
+      "id": "24"
+    },
+    {
+      "listId": "5",
+      "text": "Сделать маршрутизацию проекта",
+      "completed": false,
+      "quickly": true,
+      "id": "25"
+    },
+    {
+      "listId": "5",
+      "text": "Подключить Vuex",
+      "completed": false,
+      "quickly": true,
+      "id": "26"
+    },
+    {
+      "listId": "5",
+      "text": "Сделать блок Регистрации и авторизации",
+      "completed": false,
+      "quickly": true,
+      "id": "27"
+    },
+    {
+      "text": "VueX",
+      "quickly": false,
+      "listId": "QB2aKhW",
+      "id": "iAuczJi"
+    },
+    {
+      "text": "Vue Router",
+      "quickly": false,
+      "listId": "QB2aKhW",
+      "id": "uKSMCPO"
+    },
+    {
+      "text": "Чай",
+      "quickly": false,
+      "listId": "1",
+      "id": "CeeWa23"
+    },
+    {
+      "text": "Молоко",
+      "quickly": false,
+      "listId": "1",
+      "id": "Cj2oT--"
+    },
+    {
+      "text": "Масло",
+      "quickly": true,
+      "listId": "1",
+      "id": "2XWPOYo"
+    },
+    {
+      "text": "Конфеты",
+      "quickly": false,
+      "listId": "1",
+      "id": "O7Kk_YM"
+    },
+    {
+      "text": "Душа",
+      "quickly": false,
+      "listId": "3",
+      "id": "DY4VjOB"
+    },
+    {
+      "text": "Стража",
+      "quickly": false,
+      "listId": "3",
+      "id": "0FQzKDW"
+    },
+    {
+      "text": "Игра престолов",
+      "quickly": false,
+      "listId": "3",
+      "id": "a9u2guM"
+    },
+    {
+      "text": "Зеленая миля",
+      "quickly": false,
+      "listId": "3",
+      "id": "OPj5b9j"
+    },
+    {
+      "text": "Парк юрского периода",
+      "quickly": false,
+      "listId": "3",
+      "id": "yj4u8V3"
     }
   ]
 }

@@ -13,19 +13,25 @@ let store = new Vuex.Store({
     SET_TASKS: (state, tasks) => {
       state.tasks = tasks;
     },
-    SET_SUBTASKS: (state, subtasks) => {
-      state.subtasks = subtasks;
-    },
     ADD_TASKS: (state, tasks) => {
       state.tasks.push(tasks);
     },
     DELETE_TASKS: (state, tasks) => {
-      state.tasks.splice(tasks, 1);
+      console.log(state.tasks);
+      const index = state.tasks.map(item => item.id).indexOf(tasks.id);
+      console.log(index);
+      state.tasks.splice(index, 1);
+    },
+    SET_SUBTASKS: (state, subtasks) => {
+      state.subtasks = subtasks;
+    },
+    ADD_SUBTASKS: (state, subtasks) => {
+      state.subtasks.push(subtasks);
     },
   },
   actions: {
     GET_TASKS({commit}) {
-      return axios('http://localhost:3001/tasks', {
+      return axios('http://localhost:3001/lists?_embed=subtasks', {
         method: 'GET'
       }).then((tasks) => {
         commit('SET_TASKS', tasks.data);
@@ -35,7 +41,7 @@ let store = new Vuex.Store({
       })
     },
     ADD_TASKS({commit}, context) {
-      return axios.post('http://localhost:3001/tasks', context).then((tasks) => {
+      return axios.post('http://localhost:3001/lists', context).then((tasks) => {
         commit('ADD_TASKS', tasks.data);
         return tasks;
       }).catch((error) => {
@@ -43,7 +49,7 @@ let store = new Vuex.Store({
       })
     },
     DELETE_TASKS({commit}, params) {
-      return axios('http://localhost:3001/tasks/' + params, {
+      return axios('http://localhost:3001/lists/' + params, {
         method: 'DELETE'
       }).then((tasks) => {
         commit('DELETE_TASKS', tasks.data);
@@ -62,10 +68,10 @@ let store = new Vuex.Store({
         console.log(error);
       })
     },
-    ADD_SUBTASKS({commit}, params, context) {
-      return axios.post('http://localhost:3001/tasks/' + params, context).then((tasks) => {
-        commit('ADD_TASKS', tasks.data);
-        return tasks;
+    ADD_SUBTASKS({commit}, context) {
+      return axios.post('http://localhost:3001/subtasks', context).then((subtasks) => {
+        commit('ADD_TASKS', subtasks.data);
+        return subtasks;
       }).catch((error) => {
         console.log(error);
       })

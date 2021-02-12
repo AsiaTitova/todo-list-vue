@@ -10,20 +10,22 @@
             icon-name="back"
             iconColor="#2aaee4"><icon-back /></icon-base>
       </router-link>
-      <h2 class="task__title" @click="getCurrentTask">Список задач:</h2>
+      <h2 class="task__title" @click="getCurrentTask(); getCurrentId()">Список задач:</h2>
       <ul class="task__list">
         <TaskItem v-for="(task, index) in tasks"
                   v-bind:key="index"
                   :index="index"
                   :id="task.id"
                   :text="task.text"
-                  @getCurrentTask="getCurrentTask"/>
+                  @getCurrentTask="getCurrentTask"
+                  @getCurrentId="getCurrentId" />
       </ul>
       <AddForm />
     </div>
     <router-view/>
     <SubtaskContainer
-      :subtasks="subtasks" />
+      :subtasks="subtasks"
+      :params="params" />
   </div>
 </template>
 
@@ -38,7 +40,8 @@
   export default {
     name: 'TaskContainer',
     data: () => ({
-      subtasks: []
+      subtasks: [],
+      params: ''
     }),
     props: {
       tasks: Array
@@ -48,11 +51,15 @@
     },
     methods: {
       getCurrentTask(index) {
-        this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} })
+        this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} });
         console.log(this.tasks[index].id);
         let currentTask = this.tasks.filter(task => this.tasks[index].id === task.id);
         this.subtasks = currentTask[0].subtasks;
         return this.subtasks;
+      },
+      getCurrentId(index) {
+        this.params = this.tasks[index].id;
+        return this.params;
       }
     }
   }
