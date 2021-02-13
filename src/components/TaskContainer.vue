@@ -51,7 +51,9 @@
     },
     methods: {
       getCurrentTask(index) {
-        this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} });
+        if (this.params !== this.tasks[index].id) {
+          this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} });
+        }
         console.log(this.tasks[index].id);
         let currentTask = this.tasks.filter(task => this.tasks[index].id === task.id);
         this.subtasks = currentTask[0].subtasks;

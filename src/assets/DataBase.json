@@ -103,23 +103,10 @@
       "id": "26"
     },
     {
-      "listId": "5",
-      "text": "Сделать блок Регистрации и авторизации",
-      "completed": false,
-      "quickly": true,
-      "id": "27"
-    },
-    {
       "text": "VueX",
       "quickly": false,
       "listId": "QB2aKhW",
       "id": "iAuczJi"
-    },
-    {
-      "text": "Vue Router",
-      "quickly": false,
-      "listId": "QB2aKhW",
-      "id": "uKSMCPO"
     },
     {
       "text": "Чай",
@@ -132,12 +119,6 @@
       "quickly": false,
       "listId": "1",
       "id": "Cj2oT--"
-    },
-    {
-      "text": "Масло",
-      "quickly": true,
-      "listId": "1",
-      "id": "2XWPOYo"
     },
     {
       "text": "Конфеты",
@@ -164,16 +145,13 @@
       "id": "a9u2guM"
     },
     {
-      "text": "Зеленая миля",
-      "quickly": false,
-      "listId": "3",
-      "id": "OPj5b9j"
+      "id": "NYJPeSo"
     },
     {
-      "text": "Парк юрского периода",
-      "quickly": false,
-      "listId": "3",
-      "id": "yj4u8V3"
+      "id": "GD6jexs"
+    },
+    {
+      "id": "hQWTTvH"
     }
   ]
 }

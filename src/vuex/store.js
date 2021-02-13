@@ -28,10 +28,16 @@ let store = new Vuex.Store({
     ADD_SUBTASKS: (state, subtasks) => {
       state.subtasks.push(subtasks);
     },
+    DELETE_SUBTASKS: (state, subtasks) => {
+      console.log(state.subtasks);
+      const index = state.subtasks.map(item => item.id).indexOf(subtasks.id);
+      console.log(index);
+      state.subtasks.splice(index, 1);
+    },
   },
   actions: {
     GET_TASKS({commit}) {
-      return axios('http://localhost:3001/lists?_embed=subtasks', {
+      return axios(`http://localhost:3001/lists?_embed=subtasks`, {
         method: 'GET'
       }).then((tasks) => {
         commit('SET_TASKS', tasks.data);
@@ -41,7 +47,7 @@ let store = new Vuex.Store({
       })
     },
     ADD_TASKS({commit}, context) {
-      return axios.post('http://localhost:3001/lists', context).then((tasks) => {
+      return axios.post(`http://localhost:3001/lists`, context).then((tasks) => {
         commit('ADD_TASKS', tasks.data);
         return tasks;
       }).catch((error) => {
@@ -49,7 +55,7 @@ let store = new Vuex.Store({
       })
     },
     DELETE_TASKS({commit}, params) {
-      return axios('http://localhost:3001/lists/' + params, {
+      return axios(`http://localhost:3001/lists/` + params, {
         method: 'DELETE'
       }).then((tasks) => {
         commit('DELETE_TASKS', tasks.data);
@@ -59,7 +65,7 @@ let store = new Vuex.Store({
       })
     },
     GET_SUBTASKS({commit}) {
-      return axios('http://localhost:3001/subtasks', {
+      return axios(`http://localhost:3001/subtasks`, {
         method: 'GET'
       }).then((subtasks) => {
         commit('SET_SUBTASKS', subtasks.data);
@@ -69,8 +75,18 @@ let store = new Vuex.Store({
       })
     },
     ADD_SUBTASKS({commit}, context) {
-      return axios.post('http://localhost:3001/subtasks', context).then((subtasks) => {
-        commit('ADD_TASKS', subtasks.data);
+      return axios.post(`http://localhost:3001/subtasks`, context).then((subtasks) => {
+        commit('ADD_SUBTASKS', subtasks.data);
+        return subtasks;
+      }).catch((error) => {
+        console.log(error);
+      })
+    },
+    DELETE_SUBTASKS({commit}, params) {
+      return axios(`http://localhost:3001/subtasks/` + params, {
+        method: 'DELETE'
+      }).then((subtasks) => {
+        commit('DELETE_SUBTASKS', subtasks.data);
         return subtasks;
       }).catch((error) => {
         console.log(error);

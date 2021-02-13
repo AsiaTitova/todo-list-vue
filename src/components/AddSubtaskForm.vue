@@ -17,7 +17,7 @@
   export default {
     name: 'AddSubtaskForm',
     data: () => ({
-      text: "",
+      text: '',
       checked: false
     }),
     props: {
@@ -41,6 +41,9 @@
     computed: {
       ...mapGetters([
         'SUBTASKS'
+      ]),
+      ...mapGetters([
+        'TASKS'
       ])
     }
   }
