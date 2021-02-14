@@ -10,7 +10,6 @@
                 :text="subtask.text"
                 :completed="subtask.completed"
                 :quickly="subtask.quickly"
-                @onToggleComplated="onToggleComplated"
                 @onDeleteSubtask="onDeleteSubtask" />
     </ul>
     <AddSubtaskForm
@@ -39,12 +38,6 @@
     ...mapActions([
         'COMPLETE_SUBTASKS'
       ]),
-    onToggleComplated(index) {
-      this.$store.dispatch('COMPLETE_SUBTASKS', {
-        completed: this.checked,
-      });
-      this.subtasks[index] = !this.subtasks[index];
-    },
     onDeleteSubtask(index) {
       console.log(this.subtasks);
       this.subtasks.splice(index, 1);

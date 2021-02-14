@@ -22,7 +22,7 @@
       "id": "11",
       "listId": "3",
       "text": "Тайна Коко",
-      "completed": true,
+      "completed": false,
       "quickly": false
     },
     {
@@ -118,20 +118,6 @@
       "listId": "1",
       "completed": true,
       "id": "OyYI7zh"
-    },
-    {
-      "text": "сыр",
-      "quickly": false,
-      "listId": "1",
-      "completed": false,
-      "id": "AtSR3se"
-    },
-    {
-      "text": "чай",
-      "quickly": false,
-      "listId": "1",
-      "completed": false,
-      "id": "MbCbZqV"
     }
   ]
 }
