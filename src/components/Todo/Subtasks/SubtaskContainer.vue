@@ -10,7 +10,8 @@
                 :text="subtask.text"
                 :completed="subtask.completed"
                 :quickly="subtask.quickly"
-                @onToggleComplated="onToggleComplated" />
+                @onToggleComplated="onToggleComplated"
+                @onDeleteSubtask="onDeleteSubtask" />
     </ul>
     <AddSubtaskForm
       :params="params"/>
@@ -18,6 +19,7 @@
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
   import SubtaskItem from "./SubtaskItem.vue";
   import AddSubtaskForm from "./AddSubtaskForm.vue";
 
@@ -34,9 +36,25 @@
     SubtaskItem, AddSubtaskForm
   },
   methods: {
+    ...mapActions([
+        'COMPLETE_SUBTASKS'
+      ]),
     onToggleComplated(index) {
-      this.tasks[index] = !this.tasks[index];
+      this.$store.dispatch('COMPLETE_SUBTASKS', {
+        completed: this.checked,
+      });
+      this.subtasks[index] = !this.subtasks[index];
+    },
+    onDeleteSubtask(index) {
+      console.log(this.subtasks);
+      this.subtasks.splice(index, 1);
+    },
+  },
+  ...mapGetters({
+      storeSubtasks: 'subtasks'
+    }),
+    subtasks () {
+      return this.storeSubtasks(this.params)
     }
-  }
 }
 </script>

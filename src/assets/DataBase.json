@@ -19,24 +19,10 @@
   ],
   "subtasks": [
     {
-      "id": "6",
-      "listId": "1",
-      "text": "Хлеб",
-      "completed": false,
-      "quickly": false
-    },
-    {
-      "id": "7",
-      "listId": "1",
-      "text": "Сыр",
-      "completed": true,
-      "quickly": false
-    },
-    {
       "id": "11",
       "listId": "3",
       "text": "Тайна Коко",
-      "completed": false,
+      "completed": true,
       "quickly": false
     },
     {
@@ -45,12 +31,6 @@
       "text": "Теория Большого Взрыва",
       "completed": true,
       "quickly": false
-    },
-    {
-      "listId": "1",
-      "text": "Яйца",
-      "completed": false,
-      "id": "18"
     },
     {
       "listId": "5",
@@ -91,14 +71,14 @@
     {
       "listId": "5",
       "text": "Сделать маршрутизацию проекта",
-      "completed": false,
+      "completed": true,
       "quickly": true,
       "id": "25"
     },
     {
       "listId": "5",
       "text": "Подключить Vuex",
-      "completed": false,
+      "completed": true,
       "quickly": true,
       "id": "26"
     },
@@ -106,43 +86,8 @@
       "text": "VueX",
       "quickly": false,
       "listId": "QB2aKhW",
-      "id": "iAuczJi"
-    },
-    {
-      "text": "Чай",
-      "quickly": false,
-      "listId": "1",
-      "id": "CeeWa23"
-    },
-    {
-      "text": "Молоко",
-      "quickly": false,
-      "listId": "1",
-      "id": "Cj2oT--"
-    },
-    {
-      "text": "Конфеты",
-      "quickly": false,
-      "listId": "1",
-      "id": "O7Kk_YM"
-    },
-    {
-      "text": "Душа",
-      "quickly": false,
-      "listId": "3",
-      "id": "DY4VjOB"
-    },
-    {
-      "text": "Стража",
-      "quickly": false,
-      "listId": "3",
-      "id": "0FQzKDW"
-    },
-    {
-      "text": "Игра престолов",
-      "quickly": false,
-      "listId": "3",
-      "id": "a9u2guM"
+      "id": "iAuczJi",
+      "completed": true
     },
     {
       "id": "NYJPeSo"
@@ -152,6 +97,41 @@
     },
     {
       "id": "hQWTTvH"
+    },
+    {
+      "text": "хлеб",
+      "quickly": false,
+      "listId": "1",
+      "id": "NNDaPCA",
+      "completed": true
+    },
+    {
+      "text": "Vue Router",
+      "quickly": true,
+      "listId": "QB2aKhW",
+      "completed": true,
+      "id": "zHcxn75"
+    },
+    {
+      "text": "молоко",
+      "quickly": false,
+      "listId": "1",
+      "completed": true,
+      "id": "OyYI7zh"
+    },
+    {
+      "text": "сыр",
+      "quickly": false,
+      "listId": "1",
+      "completed": false,
+      "id": "AtSR3se"
+    },
+    {
+      "text": "чай",
+      "quickly": false,
+      "listId": "1",
+      "completed": false,
+      "id": "MbCbZqV"
     }
   ]
 }

@@ -6,7 +6,7 @@
 
 <script>
 import {mapActions, mapGetters} from 'vuex';
-import TaskContainer from "./TaskContainer.vue";
+import TaskContainer from "./Tasks/TaskContainer.vue";
 
 export default {
   name: "Todo",

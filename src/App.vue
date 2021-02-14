@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import Promo from "./components/Promo.vue";
-import Home from "./components/Home.vue";
-import Todo from "./components/Todo.vue";
+import Promo from "./components/Todo/Promo.vue";
+import Home from "./components/Todo/Home.vue";
+import Todo from "./components/Todo/Todo.vue";
 
 import style from "./sass/style.scss"
 

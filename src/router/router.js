@@ -1,9 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "../components/Home.vue";
-import Todo from "../components/Todo.vue";
-import TaskContainer from "../components/TaskContainer.vue";
-import SubtaskContainer from "../components/SubtaskContainer.vue";
+import Home from "../components/Todo/Home.vue";
+import Todo from "../components//Todo/Todo.vue";
 
 Vue.use(Router);
 

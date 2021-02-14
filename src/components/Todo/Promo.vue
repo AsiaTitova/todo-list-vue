@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import IconBase from './IconBase.vue'
-  import IconPromo from "../assets/img/icons/IconPromo.vue"
+  import IconBase from '../Icon/IconBase.vue'
+  import IconPromo from "../../assets/img/icons/IconPromo.vue"
 
   export default {
     name: 'Promo',

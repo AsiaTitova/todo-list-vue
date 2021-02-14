@@ -6,7 +6,7 @@
       <label class="add-form__label add-form__label--quickly" for="quickly">Срочно</label>
       <input class="add-form__checkbox" type="checkbox" id="quickly" v-model="checked">
       <button @click="addSubtasks(); onResetText()" class="add-form__button" type="button">Добавить</button>
-      <button @click="onResetText" class="add-form__button" type="button">Отмена</button>
+      <button @click="onResetText()" class="add-form__button" type="button">Отмена</button>
     </form>
   </div>
 </template>
@@ -34,15 +34,14 @@
         this.$store.dispatch('ADD_SUBTASKS', {
           text: this.text,
           quickly: this.checked,
-          listId: this.params
+          listId: this.params,
+          completed: this.checked
         });
       }
     },
     computed: {
       ...mapGetters([
-        'SUBTASKS'
-      ]),
-      ...mapGetters([
+        'SUBTASKS',
         'TASKS'
       ])
     }

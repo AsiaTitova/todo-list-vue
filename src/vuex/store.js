@@ -6,8 +6,7 @@ Vue.use(Vuex)
 
 let store = new Vuex.Store({
   state: {
-    tasks:[],
-    subtasks: []
+    tasks:[]
   },
   mutations: {
     SET_TASKS: (state, tasks) => {
@@ -17,7 +16,6 @@ let store = new Vuex.Store({
       state.tasks.push(tasks);
     },
     DELETE_TASKS: (state, tasks) => {
-      console.log(state.tasks);
       const index = state.tasks.map(item => item.id).indexOf(tasks.id);
       console.log(index);
       state.tasks.splice(index, 1);
@@ -26,13 +24,18 @@ let store = new Vuex.Store({
       state.subtasks = subtasks;
     },
     ADD_SUBTASKS: (state, subtasks) => {
-      state.subtasks.push(subtasks);
+      const task = state.tasks.find(task => task.id === subtasks.listId);
+      task.subtasks.push(subtasks);
     },
     DELETE_SUBTASKS: (state, subtasks) => {
-      console.log(state.subtasks);
-      const index = state.subtasks.map(item => item.id).indexOf(subtasks.id);
+      const task = state.tasks.find(task => task.id === subtasks.listId);
+      console.log(task);
+      const index = task.map(item => item.id).indexOf(subtasks.id);
       console.log(index);
-      state.subtasks.splice(index, 1);
+      task.subtasks.splice(index, 1);
+    },
+    COMPLETE_SUBTASKS: (state, subtasks) => {
+      subtasks.completed = !subtasks.completed;
     },
   },
   actions: {
@@ -92,13 +95,28 @@ let store = new Vuex.Store({
         console.log(error);
       })
     },
+    COMPLETE_SUBTASKS({commit}, context) {
+      return axios.patch(`http://localhost:3001/subtasks/` + context.params, context.data).then((subtasks) => {
+        commit('COMPLETE_SUBTASKS', subtasks.data);
+        return subtasks;
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
   },
   getters: {
     TASKS(state) {
       return state.tasks;
     },
-    SUBTASKS(state) {
-      return state.subtasks;
+    SUBTASKS:(state) => (taskId) => {
+      if (!state.tasks.length) return []
+
+      try {
+        return state.tasks.find(task => task.id == taskId.toString()).subtasks
+      } catch (e) {
+        console.log(e)
+        return []
+      }
     }
   }
 })

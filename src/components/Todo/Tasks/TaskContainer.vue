@@ -10,7 +10,7 @@
             icon-name="back"
             iconColor="#2aaee4"><icon-back /></icon-base>
       </router-link>
-      <h2 class="task__title" @click="getCurrentTask(); getCurrentId()">Список задач:</h2>
+      <h2 class="task__title">Список задач:</h2>
       <ul class="task__list">
         <TaskItem v-for="(task, index) in tasks"
                   v-bind:key="index"
@@ -32,10 +32,9 @@
 <script>
   import TaskItem from "./TaskItem.vue";
   import AddForm from "./AddForm.vue";
-  import Loader from "./Loader.vue";
-  import IconBase from "./IconBase.vue";
-  import IconBack from "../assets/img/icons/IconBack.vue";
-  import SubtaskContainer from "./SubtaskContainer.vue";
+  import IconBase from "../../Icon/IconBase.vue";
+  import IconBack from "../../../assets/img/icons/IconBack.vue";
+  import SubtaskContainer from "../Subtasks/SubtaskContainer.vue";
 
   export default {
     name: 'TaskContainer',
@@ -47,16 +46,15 @@
       tasks: Array
     },
     components: {
-      TaskItem, AddForm, Loader, IconBase, IconBack, SubtaskContainer
+      TaskItem, AddForm, IconBase, IconBack, SubtaskContainer
     },
     methods: {
       getCurrentTask(index) {
-        if (this.params !== this.tasks[index].id) {
-          this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} });
-        }
-        console.log(this.tasks[index].id);
         let currentTask = this.tasks.filter(task => this.tasks[index].id === task.id);
         this.subtasks = currentTask[0].subtasks;
+        if (this.subtasks.id !== this.tasks[index].id) {
+          this.$router.push({name: 'Todo', params: {id: this.tasks[index].id} });
+        }
         return this.subtasks;
       },
       getCurrentId(index) {

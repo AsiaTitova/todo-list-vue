@@ -11,16 +11,13 @@
 </template>
 
 <script>
-  import IconBase from "./IconBase.vue"
-  import IconDelete from "../assets/img/icons/IconDelete.vue"
-  import IconQuickly from "../assets/img/icons/IconQuickly";
+  import IconBase from "../../Icon/IconBase.vue"
+  import IconDelete from "../../../assets/img/icons/IconDelete.vue"
+  import IconQuickly from "../../../assets/img/icons/IconQuickly";
   import {mapActions, mapGetters} from 'vuex';
 
   export default {
     name: "TaskItem",
-    data: () => ({
-      isActive: false
-    }),
     props: {
       index: Number,
       id: String,
