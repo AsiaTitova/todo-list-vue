@@ -39,7 +39,6 @@
         'COMPLETE_SUBTASKS'
       ]),
     onDeleteSubtask(index) {
-      console.log(this.subtasks);
       this.subtasks.splice(index, 1);
     },
   },

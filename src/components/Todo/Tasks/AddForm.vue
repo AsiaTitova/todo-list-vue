@@ -25,7 +25,7 @@
         document.querySelector('.add-form__input--tasks').value = '';
       },
       onAddTasks() {
-        this.$store.dispatch('ADD_TASKS', { text: this.text });
+        this.$store.dispatch('ADD_TASKS', { text: this.text, subtasks: [] });
       }
     },
     computed: {

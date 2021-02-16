@@ -64,12 +64,6 @@
     },
     {
       "listId": "5",
-      "text": "Реализовать сценарий \"Добавление срочной задачи\"",
-      "completed": true,
-      "id": "24"
-    },
-    {
-      "listId": "5",
       "text": "Сделать маршрутизацию проекта",
       "completed": true,
       "quickly": true,
@@ -118,6 +112,27 @@
       "listId": "1",
       "completed": true,
       "id": "OyYI7zh"
+    },
+    {
+      "text": "сыр",
+      "quickly": false,
+      "listId": "1",
+      "completed": false,
+      "id": "jXeV1MO"
+    },
+    {
+      "text": "Promise",
+      "quickly": false,
+      "listId": "QB2aKhW",
+      "completed": false,
+      "id": "hhQha2r"
+    },
+    {
+      "text": "чай",
+      "quickly": false,
+      "listId": "1",
+      "completed": false,
+      "id": "bg_hxKg"
     }
   ]
 }
