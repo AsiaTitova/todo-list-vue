@@ -11,6 +11,7 @@
         icon-name="quickly"
         iconColor="red"
         v-if="quickly"><icon-quickly /></icon-base>
+        <p class="checkbox__data">{{data}}</p>
       <button class="checkbox__delete" type="button" @click="deleteSubtask(index); onRemoveSubtasks()">
         <icon-base
         viewBox="0 0 40 40"
@@ -34,9 +35,12 @@
     props: {
       index: Number,
       id: String,
+      data: String,
       text: String,
       completed: Boolean,
-      quickly: Boolean
+      quickly: Boolean,
+      subtasks: Array,
+      params: String
     },
     components: {
       IconBase,
@@ -46,7 +50,8 @@
     methods: {
       ...mapActions([
         'DELETE_TASKS',
-        'COMPLETE_SUBTASKS'
+        'COMPLETE_SUBTASKS',
+        'COMPLETE_TASKS'
       ]),
       toggleComplated() {
         this.completed = !this.completed;
@@ -56,7 +61,26 @@
             completed: this.completed
           }
         });
+        console.log(this.params, this.id);
+        let com = this.subtasks.every(item => item.completed === true);
+        console.log(this.subtasks, com)
+        if (com === true) {
+        this.$store.dispatch('COMPLETE_TASKS', {
+          params: this.params,
+          data: {
+            completed: true
+          }
+        })
+        } else {
+          this.$store.dispatch('COMPLETE_TASKS', {
+          params: this.params,
+          data: {
+            completed: false
+          }
+        })
+        }
       },
+
       onRemoveSubtasks() {
         this.$store.dispatch('DELETE_SUBTASKS', this.id);
       },

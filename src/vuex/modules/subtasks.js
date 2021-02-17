@@ -15,7 +15,7 @@ export default {
       task.subtasks.push(subtasks);
     },
     COMPLETE_SUBTASKS: (state, subtasks) => {
-      subtasks.completed = !subtasks.completed;
+      state.subtasks.completed = !state.subtasks.completed;
     },
   },
   actions: {
@@ -24,6 +24,7 @@ export default {
         method: 'GET'
       }).then((subtasks) => {
         commit('SET_SUBTASKS', subtasks.data);
+        subtasks.data.sort(a.data.localeCompare(b.data));
         return subtasks;
       }).catch((error) => {
         console.log(error);

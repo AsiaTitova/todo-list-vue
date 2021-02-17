@@ -16,7 +16,10 @@ export default {
       const index = state.tasks.map(item => item.id).indexOf(params);
       console.log(index);
       state.tasks.splice(index, 1);
-    }
+    },
+    COMPLETE_TASKS: (state, tasks) => {
+      tasks.completed = !tasks.completed;
+    },
   },
   actions: {
     GET_TASKS({commit}) {
@@ -24,6 +27,7 @@ export default {
         method: 'GET'
       }).then((tasks) => {
         commit('SET_TASKS', tasks.data);
+        tasks.data.sort((a, b) => a.text.localeCompare(b.text));
         return tasks;
       }).catch((error) => {
         console.log(error);
@@ -44,6 +48,14 @@ export default {
       .catch((error) => {
         console.log(error);
       })
+    },
+    COMPLETE_TASKS({commit}, context) {
+      return axios.patch(`http://localhost:3001/lists/` + context.params, context.data).then((tasks) => {
+        commit('COMPLETE_TASKS', tasks.data);
+        return tasks;
+      }).catch((error) => {
+        console.log(error);
+      });
     }
   },
   getters: {

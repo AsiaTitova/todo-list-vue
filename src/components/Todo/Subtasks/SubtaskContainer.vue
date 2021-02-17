@@ -7,10 +7,13 @@
                 v-bind:key="index"
                 :index="index"
                 :id="subtask.id"
+                :data="subtask.data"
                 :text="subtask.text"
                 :completed="subtask.completed"
                 :quickly="subtask.quickly"
-                @onDeleteSubtask="onDeleteSubtask" />
+                @onDeleteSubtask="onDeleteSubtask"
+                :params="params"
+                :subtasks="subtasks" />
     </ul>
     <AddSubtaskForm
       :params="params"/>
@@ -46,7 +49,7 @@
       storeSubtasks: 'subtasks'
     }),
     subtasks () {
-      return this.storeSubtasks(this.params)
+      return this.storeSubtasks(this.params);
     }
 }
 </script>

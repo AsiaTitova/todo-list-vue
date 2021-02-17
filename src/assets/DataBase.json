@@ -2,19 +2,23 @@
   "lists": [
     {
       "id": "1",
-      "text": "Покупки"
+      "text": "Покупки",
+      "completed": true
     },
     {
       "id": "3",
-      "text": "Фильмы и сериалы"
+      "text": "Фильмы и сериалы",
+      "completed": true
     },
     {
       "text": "Создать приложение ToDo list",
-      "id": "5"
+      "id": "5",
+      "completed": true
     },
     {
       "text": "Изучить Vue",
-      "id": "QB2aKhW"
+      "id": "QB2aKhW",
+      "completed": false
     }
   ],
   "subtasks": [
@@ -22,117 +26,132 @@
       "id": "11",
       "listId": "3",
       "text": "Тайна Коко",
-      "completed": false,
-      "quickly": false
+      "completed": true,
+      "quickly": false,
+      "data": "12.1.2021 12:00"
     },
     {
       "id": "12",
       "listId": "3",
       "text": "Теория Большого Взрыва",
-      "completed": true,
-      "quickly": false
+      "completed": false,
+      "quickly": false,
+      "data": "12.12.2020 12:00"
     },
     {
       "listId": "5",
       "text": "Оформить дизайн",
       "completed": true,
-      "id": "19"
+      "id": "19",
+      "data": "12.2.2021 12:00"
     },
     {
       "listId": "5",
       "text": "Реализовать сценарий \"Добавление новых списков задач\"",
       "completed": true,
-      "id": "20"
+      "id": "20",
+      "data": "12.1.2021 13:00"
     },
     {
       "listId": "5",
       "text": "Реализовать сценарий \"Удаление списков задач\"",
       "completed": true,
-      "id": "21"
+      "id": "21",
+      "data": "12.1.2021 12:30"
     },
     {
       "listId": "5",
       "text": "Реализовать сценарий \"Добавление подзадач\"",
       "completed": true,
-      "id": "22"
+      "id": "22",
+      "data": "12.1.2021 12:40"
     },
     {
       "listId": "5",
       "text": "Реализовать сценарий \"Удаление подзадач\"",
       "completed": true,
-      "id": "23"
+      "id": "23",
+      "data": "12.1.2021 12:45"
     },
     {
       "listId": "5",
       "text": "Сделать маршрутизацию проекта",
       "completed": true,
       "quickly": true,
-      "id": "25"
+      "id": "25",
+      "data": "12.1.2021 10:00"
     },
     {
       "listId": "5",
       "text": "Подключить Vuex",
       "completed": true,
       "quickly": true,
-      "id": "26"
+      "id": "26",
+      "data": "12.1.2021 11:00"
     },
     {
       "text": "VueX",
       "quickly": false,
       "listId": "QB2aKhW",
       "id": "iAuczJi",
-      "completed": true
-    },
-    {
-      "id": "NYJPeSo"
-    },
-    {
-      "id": "GD6jexs"
-    },
-    {
-      "id": "hQWTTvH"
+      "completed": true,
+      "data": "8.1.2021 13:00"
     },
     {
       "text": "хлеб",
       "quickly": false,
       "listId": "1",
       "id": "NNDaPCA",
-      "completed": true
+      "completed": true,
+      "data": "12.1.2021 13:00"
     },
     {
       "text": "Vue Router",
       "quickly": true,
       "listId": "QB2aKhW",
       "completed": true,
-      "id": "zHcxn75"
+      "id": "zHcxn75",
+      "data": "12.1.2021 12:00"
     },
     {
       "text": "молоко",
       "quickly": false,
       "listId": "1",
       "completed": true,
-      "id": "OyYI7zh"
+      "id": "OyYI7zh",
+      "data": "12.1.2021 12:50"
     },
     {
       "text": "сыр",
       "quickly": false,
       "listId": "1",
       "completed": false,
-      "id": "jXeV1MO"
+      "id": "jXeV1MO",
+      "data": "12.1.2021 12:58"
     },
     {
       "text": "Promise",
       "quickly": false,
       "listId": "QB2aKhW",
       "completed": false,
-      "id": "hhQha2r"
+      "id": "hhQha2r",
+      "data": "10.1.2021 13:00"
     },
     {
       "text": "чай",
       "quickly": false,
       "listId": "1",
+      "completed": true,
+      "id": "bg_hxKg",
+      "data": "12.1.2021 10:00"
+    },
+    {
+      "text": "Душа",
+      "quickly": false,
+      "listId": "QB2aKhW",
       "completed": false,
-      "id": "bg_hxKg"
+      "data": "18.1.2021 0:45",
+      "id": "Aiowxno"
     }
   ]
 }

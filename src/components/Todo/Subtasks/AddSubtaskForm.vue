@@ -35,8 +35,19 @@
           text: this.text,
           quickly: this.checked,
           listId: this.params,
-          completed: this.checked
+          completed: this.checked,
+          data: this.setDate()
         });
+      },
+      setDate() {
+        let data = new Date();
+        let day = data.getDate();
+        let month = data.getMonth();
+        let year = data.getFullYear();
+        let hours = data.getHours();
+        let minutes = data.getMinutes();
+        let fullData = day + '.' + month + '.' + year + ' ' + hours + ':' + minutes;
+        return fullData;
       }
     },
     computed: {
