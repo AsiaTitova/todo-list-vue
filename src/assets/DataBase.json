@@ -3,12 +3,12 @@
     {
       "id": "1",
       "text": "Покупки",
-      "completed": true
+      "completed": false
     },
     {
       "id": "3",
       "text": "Фильмы и сериалы",
-      "completed": true
+      "completed": false
     },
     {
       "text": "Создать приложение ToDo list",
@@ -26,7 +26,7 @@
       "id": "11",
       "listId": "3",
       "text": "Тайна Коко",
-      "completed": true,
+      "completed": false,
       "quickly": false,
       "data": "12.1.2021 12:00"
     },
@@ -34,7 +34,7 @@
       "id": "12",
       "listId": "3",
       "text": "Теория Большого Взрыва",
-      "completed": false,
+      "completed": true,
       "quickly": false,
       "data": "12.12.2020 12:00"
     },
@@ -117,7 +117,7 @@
       "text": "молоко",
       "quickly": false,
       "listId": "1",
-      "completed": true,
+      "completed": false,
       "id": "OyYI7zh",
       "data": "12.1.2021 12:50"
     },

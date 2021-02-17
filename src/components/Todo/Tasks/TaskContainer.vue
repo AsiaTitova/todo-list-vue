@@ -72,6 +72,7 @@
       },
       getCompleteTasks(value) {
         this.filtersTasks = [];
+        this.subtasks = [];
         if (value === 'COMPLETE') {
           let newTasks = this.tasks.filter(task => task.completed === true);
           this.filtersTasks = newTasks;

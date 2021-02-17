@@ -1,7 +1,7 @@
 <template>
   <li class="subtask__item" @click="getCurrentId()">
     <form class="subtask__checkbox checkbox">
-      <input class="checkbox__input visually-hidden" type="checkbox" :id="index" :checked="completed" @click="toggleComplated()">
+      <input class="checkbox__input visually-hidden" type="checkbox" :id="index" :checked="completed" @click="toggleComplated(index)">
       <label class="checkbox__label" :for="index">{{text}}</label>
       <icon-base
         class="checkbox__quickly"
@@ -53,7 +53,7 @@
         'COMPLETE_SUBTASKS',
         'COMPLETE_TASKS'
       ]),
-      toggleComplated() {
+      toggleComplated(index) {
         this.completed = !this.completed;
         this.$store.dispatch('COMPLETE_SUBTASKS', {
           params: this.id,
@@ -61,11 +61,11 @@
             completed: this.completed
           }
         });
-        console.log(this.params, this.id);
+        this.$set(this.subtasks[index], 'completed', this.completed);
         let com = this.subtasks.every(item => item.completed === true);
-        console.log(this.subtasks, com)
+
         if (com === true) {
-        this.$store.dispatch('COMPLETE_TASKS', {
+          this.$store.dispatch('COMPLETE_TASKS', {
           params: this.params,
           data: {
             completed: true
@@ -80,7 +80,6 @@
         })
         }
       },
-
       onRemoveSubtasks() {
         this.$store.dispatch('DELETE_SUBTASKS', this.id);
       },
@@ -88,7 +87,6 @@
         this.$emit("onDeleteSubtask", index);
       },
       getCurrentId() {
-        console.log(this.$props.id)
         this.subId = this.$props.id;
         return this.subId;
       }

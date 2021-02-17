@@ -13,7 +13,7 @@
                 :quickly="subtask.quickly"
                 @onDeleteSubtask="onDeleteSubtask"
                 :params="params"
-                :subtasks="subtasks" />
+                :subtasks="subtasks"/>
     </ul>
     <AddSubtaskForm
       :params="params"/>
@@ -28,7 +28,8 @@
   export default {
     name: 'SubtaskContainer',
     data: () => ({
-      text: ''
+      text: '',
+      refs: []
   }),
   props: {
       subtasks: Array,
@@ -43,7 +44,7 @@
       ]),
     onDeleteSubtask(index) {
       this.subtasks.splice(index, 1);
-    },
+    }
   },
   ...mapGetters({
       storeSubtasks: 'subtasks'

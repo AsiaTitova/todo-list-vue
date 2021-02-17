@@ -18,7 +18,7 @@ export default {
       state.tasks.splice(index, 1);
     },
     COMPLETE_TASKS: (state, tasks) => {
-      tasks.completed = !tasks.completed;
+      state.tasks[tasks.id].completed = tasks.completed;
     },
   },
   actions: {
